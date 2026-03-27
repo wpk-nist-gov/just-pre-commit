@@ -27,16 +27,10 @@ repos:
       - id: sync-uv-dependency-groups
 
   # justfile
-  - repo: local
+  - repo: https://github.com/wpk-nist-gov/just-pre-commit
+    rev: v1.35.0
     hooks:
       - id: justfile-format
-        name: justfile format
-        entry: apply-command "just --fmt --unstable --justfile"
-        language: python
-        files: \.?[jJ]ustfile$|.*\.just$
-        pass_filenames: true
-        additional_dependencies:
-          - "."
 
   # * Forbidden files
   - repo: local
