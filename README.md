@@ -11,7 +11,7 @@ format justfiles.
 ```yaml
 repos:
   - repo: https://github.com/wpk-nist-gov/just-pre-commit
-    rev: v1.38.0
+    rev: v1.39.0
     hooks:
       # Run just --fmt on justfiles
       - id: justfile-format
