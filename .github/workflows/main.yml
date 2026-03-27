@@ -1,0 +1,58 @@
+name: main
+on:
+  schedule:
+    - cron: "0 */4 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  build:
+    name: main
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: true # needed to push commits below
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7.6.0
+
+      - name: set git config
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
+      - run: uv run --no-project scripts/mirror.py
+
+      - name: check for unpushed commits
+        id: check_unpushed
+        run: |
+          UNPUSHED_COMMITS=$(git log origin/main..HEAD)
+          if [ -z "$UNPUSHED_COMMITS" ]; then
+            echo "No unpushed commits found."
+            echo "changes_exist=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Unpushed commits found."
+            echo "changes_exist=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: push changes if they exist
+        if: steps.check_unpushed.outputs.changes_exist == 'true'
+        run: |
+          git push origin HEAD:refs/heads/main
+          git push origin HEAD:refs/heads/main --tags
+
+      - name: create release on new tag if new changes exist
+        if: steps.check_unpushed.outputs.changes_exist == 'true'
+        run: |
+          TAG_NAME=$(git describe --tags --abbrev=0)
+          echo "$TAG_NAME"
+          gh release create "$TAG_NAME" \
+            --title "$TAG_NAME" \
+            --notes "See: https://github.com/casey/just/releases/tag/%{TAG_NAME/v}" \
+            --latest
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,18 @@
+- id: justfile-format
+  name: justfile-format
+  description: Format justfiles
+  entry: apply-command "just --fmt --unstable --justfile"
+  args: []
+  language: python
+  files: \.?[jJ]ustfile$|.*\.just$
+  pass_filenames: true
+  minimum_pre_commit_version: &min_pre_commit "2.9.2"
+
+- id: just
+  name: just
+  description: Run just command
+  entry: just
+  args: []
+  language: python
+  pass_filenames: false
+  minimum_pre_commit_version: *min_pre_commit
