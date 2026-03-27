@@ -32,7 +32,7 @@ classifiers = [
     "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
-    "rust-just==1.42.0",
+    "rust-just==1.42.1",
 ]
 
 [project.scripts]
