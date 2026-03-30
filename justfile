@@ -74,7 +74,7 @@ lint-manual *commands: (pre-commit "run --all-files --hook-stage=manual" command
 
 alias lint-all := lint-manual
 
-# run prettier/markdownlint/pypoject-fmt
+# run prettier/markdownlint/pyproject-fmt
 [group("lint")]
 prettier: (lint "pyproject-fmt") (lint-manual "markdownlint")
 
@@ -85,7 +85,7 @@ ruff: (lint "ruff")
 [group("lint")]
 lint-upgrade:
     just pre-commit autoupdate
-    uv run --no-project --script tools/requirements_lock.py --upgrade requirements/pre-commit-additional-dependencies.txt
+    -[[ -f requirements/pre-commit-additional-dependencies.txt ]] && uv run --no-project --script tools/requirements_lock.py --upgrade requirements/pre-commit-additional-dependencies.txt
     -just pre-commit run -v sync-pre-commit-deps -a
 
 # * User setup -----------------------------------------------------------------
