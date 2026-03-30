@@ -74,7 +74,7 @@ lint-manual *commands: (pre-commit "run --all-files --hook-stage=manual" command
 
 alias lint-all := lint-manual
 
-# run prettier/markdownlint/pypoject-fmt
+# run prettier/markdownlint/pyproject-fmt
 [group("lint")]
 prettier: (lint "pyproject-fmt") (lint-manual "markdownlint")
 
@@ -85,7 +85,7 @@ ruff: (lint "ruff")
 [group("lint")]
 lint-upgrade:
     just pre-commit autoupdate
-    uv run --no-project --script tools/requirements_lock.py --upgrade requirements/pre-commit-additional-dependencies.txt
+    -[[ -f requirements/pre-commit-additional-dependencies.txt ]] && uv run --no-project --script tools/requirements_lock.py --upgrade requirements/pre-commit-additional-dependencies.txt
     -just pre-commit run -v sync-pre-commit-deps -a
 
 # * User setup -----------------------------------------------------------------
@@ -215,6 +215,37 @@ typecheck *options: (_typecheck "-cmypy[faster-cache] -cbasedpyright -cpyrefly -
 [group("typecheck")]
 typecheck-all *checkers="mypy basedpyright": (nox "-s typecheck -- +m" checkers)
 
+<<<<<<< before updating
+=======
+# * docs -----------------------------------------------------------------------
+
+# build docs.  Options {html, spelling, livehtml, linkcheck, open}.
+[group("docs")]
+[group("nox")]
+docs *options="html": (nox "-s docs -- +d" options)
+
+[group("docs")]
+docs-version version="": (docs "html" prepend("++version=", version))
+
+[group("docs")]
+docs-html: (docs "html")
+
+[group("docs")]
+docs-clean-build: clean-docs docs
+
+# create a release
+[group("dist")]
+[group("docs")]
+docs-release message="update docs" branch="nist-pages":
+    {{ UVX_WITH_OPTS }} ghp-import -o -n -m "{{ message }}" -b {{ branch }} docs/_build/html
+
+[group("docs")]
+docs-open: (docs "open")
+
+[group("docs")]
+docs-livehtml: (docs "livehtml")
+
+>>>>>>> after updating
 # * dist ----------------------------------------------------------------------
 
 [group("dist")]
