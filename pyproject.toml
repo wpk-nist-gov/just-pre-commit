@@ -258,21 +258,6 @@ deps = "pip"
 [tool.pyproject2conda.dependencies]
 pytest-accept = { pip = true }
 
-<<<<<<< before updating
-=======
-[tool.pyproject2conda.envs.dev]
-groups = "dev"
-
-[tool.pyproject2conda.envs.test]
-groups = "test"
-python = "all"
-
-[tool.pyproject2conda.envs.test-extras]
-groups = "test-extras"
-python = "all"
-skip-package = true
-
->>>>>>> after updating
 [tool.pyproject2conda.envs.uvx-tools]
 reqs = [
     # these used solely for specking tools to be run via uvx ...

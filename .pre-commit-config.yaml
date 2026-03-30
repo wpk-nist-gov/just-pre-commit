@@ -25,15 +25,6 @@ repos:
     hooks:
       - id: sync-pre-commit-deps
       - id: sync-uv-dependency-groups
-<<<<<<< before updating
-
-  # justfile
-  - repo: https://github.com/wpk-nist-gov/just-pre-commit
-    rev: v1.48.0
-    hooks:
-      - id: justfile-format
-=======
->>>>>>> after updating
 
   # * Forbidden files
   - repo: local

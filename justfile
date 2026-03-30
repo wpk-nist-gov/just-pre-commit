@@ -215,37 +215,6 @@ typecheck *options: (_typecheck "-cmypy[faster-cache] -cbasedpyright -cpyrefly -
 [group("typecheck")]
 typecheck-all *checkers="mypy basedpyright": (nox "-s typecheck -- +m" checkers)
 
-<<<<<<< before updating
-=======
-# * docs -----------------------------------------------------------------------
-
-# build docs.  Options {html, spelling, livehtml, linkcheck, open}.
-[group("docs")]
-[group("nox")]
-docs *options="html": (nox "-s docs -- +d" options)
-
-[group("docs")]
-docs-version version="": (docs "html" prepend("++version=", version))
-
-[group("docs")]
-docs-html: (docs "html")
-
-[group("docs")]
-docs-clean-build: clean-docs docs
-
-# create a release
-[group("dist")]
-[group("docs")]
-docs-release message="update docs" branch="nist-pages":
-    {{ UVX_WITH_OPTS }} ghp-import -o -n -m "{{ message }}" -b {{ branch }} docs/_build/html
-
-[group("docs")]
-docs-open: (docs "open")
-
-[group("docs")]
-docs-livehtml: (docs "livehtml")
-
->>>>>>> after updating
 # * dist ----------------------------------------------------------------------
 
 [group("dist")]
