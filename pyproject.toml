@@ -55,12 +55,9 @@ test = [
     { include-group = "pytest" },
 ]
 type = [
-<<<<<<< before updating
     "packaging",
     "urllib3",
-=======
     { include-group = "nox" },
->>>>>>> after updating
     { include-group = "pylint" },
     { include-group = "pytest" },
     { include-group = "typecheck-runner" },
@@ -146,18 +143,15 @@ warn_unused_ignores = true
 
 [tool.pyrefly]
 enabled-ignores = [ "pyrefly" ]
-<<<<<<< before updating
-project-includes = [ "scripts", "src", "tests" ]
-=======
 project-includes = [
     "src",
     "tests",
     # tools
     "noxfile.py",
+    "scripts",
     "tools",
 ]
 search-path = [ "." ]
->>>>>>> after updating
 
 [tool.pyright]
 exclude = [
@@ -207,17 +201,14 @@ root = "tests"
 [tool.ty]
 # Disable support for `type: ignore` comments
 analysis.respect-type-ignore-comments = false
-<<<<<<< before updating
-src.include = [ "scripts", "src", "tests" ]
-=======
 src.include = [
     "src",
     "tests",
     # tools
     "noxfile.py",
+    "scripts",
     "tools",
 ]
->>>>>>> after updating
 
 # * Testing --------------------------------------------------------------------
 [tool.pytest.ini_options]
