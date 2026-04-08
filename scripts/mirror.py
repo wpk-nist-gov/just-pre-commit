@@ -61,8 +61,9 @@ def get_all_versions() -> list[Version]:
 
 def get_current_version(pyproject: dict[str, Any]) -> Version:
     requirements = [Requirement(d) for d in pyproject["project"]["dependencies"]]
-    requirement = next((r for r in requirements if r.name == PACKAGE), None)
-    if requirement is None:
+    if (
+        requirement := next((r for r in requirements if r.name == PACKAGE), None)
+    ) is None:
         msg = f"pyproject.toml does not have {PACKAGE} requirement"
         raise RuntimeError(msg)
 
