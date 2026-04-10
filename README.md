@@ -16,14 +16,14 @@ repos:
       # Run just --fmt on justfiles
       - id: justfile-format
         # optionally pass extras arguments to just --fmt using:
-        # extra_args: ["some", "options", "to", "just", "--" ]
+        # args: ["some", "options", "to", "just", "--" ]
         # include "--" to indicate proceeding options are to just
       # Run just commands
       - id: just
         extra_args: [my-just-command]
         # potentially useful options are:
-        # pass_filenames: true/false
-        # extra_args: [ "command-name" ]
+        # pass_filenames: true/false (default: false)
+        # args: [ "command-name" ]
         # types: [python]
         # always_run: true
 ```
