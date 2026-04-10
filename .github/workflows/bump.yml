@@ -74,13 +74,13 @@ jobs:
           echo "Pull Request BRANCH    - $BRANCH"
           echo "Pull Request VERIFIED  - $VERIFIED"
 
-      - name: automerge
-        if:
-          ${{ (inputs.automerge || env.AUTOMERGE == 'true') &&
-          steps.cpr.outputs.pull-request-number }}
-        env:
-          NUMBER: ${{ steps.cpr.outputs.pull-request-number }}
-          # Need PAT if want to start other actions.  Use GITHUB_TOKEN if not.
-          GH_TOKEN: ${{ secrets.PAT }}
-        run: |
-          gh pr merge -m --auto "$NUMBER"
+      # - name: automerge
+      #   if:
+      #     ${{ (inputs.automerge || env.AUTOMERGE == 'true') &&
+      #     steps.cpr.outputs.pull-request-number }}
+      #   env:
+      #     NUMBER: ${{ steps.cpr.outputs.pull-request-number }}
+      #     # Need PAT if want to start other actions.  Use GITHUB_TOKEN if not.
+      #     GH_TOKEN: ${{ secrets.PAT }}
+      #   run: |
+      #     gh pr merge -m --auto "$NUMBER"
