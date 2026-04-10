@@ -121,7 +121,6 @@ CPY = "CPY"
 # * typecheck ---------------------------------------------------------------------
 [tool.mypy]
 files = [
-    "scripts",
     "src",
     "tests",
     # tools
@@ -148,7 +147,6 @@ project-includes = [
     "tests",
     # tools
     "noxfile.py",
-    "scripts",
     "tools",
 ]
 search-path = [ "." ]
@@ -163,7 +161,6 @@ exclude = [
     ".venv/**",
 ]
 include = [
-    "scripts",
     "src",
     "tests",
     # tools
@@ -206,7 +203,6 @@ src.include = [
     "tests",
     # tools
     "noxfile.py",
-    "scripts",
     "tools",
 ]
 

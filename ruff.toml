@@ -85,9 +85,6 @@ strictly-empty-init-modules = false
     # "D100",  # - undocumented-public-module
     # "INP001",
 ]
-"scripts/mirror.py" = [
-    "D103",
-]
 "src/**/*.py" = [
     # "ANN",     # - Annotations (just use mypy/pyright)
     # "D102",    # - Missing docstring in public method
@@ -106,4 +103,7 @@ strictly-empty-init-modules = false
     # "PLR0913", # - complexity sometimes ok
     # "PLR0917", # - complexity sometimes ok
     "D104",
+]
+"tools/mirror.py" = [
+    "D103",
 ]
