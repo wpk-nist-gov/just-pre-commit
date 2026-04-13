@@ -326,7 +326,7 @@ requires-dist = [{ name = "rust-just", specifier = "==1.49.0" }]
 [package.metadata.requires-dev]
 basedpyright = [{ name = "basedpyright", specifier = ">=1.31.3" }]
 dev = [
-    { name = "mypy", extras = ["faster-cache"], marker = "python_full_version >= '3.14'", specifier = ">=1.15.0" },
+    { name = "mypy", extras = ["faster-cache"], marker = "python_full_version >= '3.14'", specifier = ">=1.20.0" },
     { name = "nox", marker = "python_full_version >= '3.14'", specifier = ">=2025.5.1" },
     { name = "packaging", marker = "python_full_version >= '3.14'" },
     { name = "pylint", marker = "python_full_version >= '3.14'" },
@@ -336,7 +336,7 @@ dev = [
     { name = "typecheck-runner", marker = "python_full_version >= '3.14'", specifier = ">=0.1.6" },
     { name = "urllib3", marker = "python_full_version >= '3.14'" },
 ]
-mypy = [{ name = "mypy", extras = ["faster-cache"], specifier = ">=1.15.0" }]
+mypy = [{ name = "mypy", extras = ["faster-cache"], specifier = ">=1.20.0" }]
 nox = [{ name = "nox", specifier = ">=2025.5.1" }]
 pylint = [{ name = "pylint" }]
 pytest = [{ name = "pytest" }]
