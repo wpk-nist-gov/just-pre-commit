@@ -1,12 +1,16 @@
 [build-system]
 build-backend = "uv_build"
 requires = [
-    "uv-build>=0.11.0,<0.12.0",
+    "uv-build>=0.11.8,<0.12.0",
 ]
 
 [project]
 name = "just-pre-commit"
+<<<<<<< before updating
 version = "0.0.0"
+=======
+version = "0.1.0"
+>>>>>>> after updating
 description = "Just pre-commit hooks"
 readme = "README.md"
 keywords = [
@@ -63,16 +67,40 @@ type = [
     { include-group = "typecheck-runner" },
 ]
 # other groups
+<<<<<<< before updating
 basedpyright = [ "basedpyright>=1.31.3" ]
 mypy = [ "mypy[faster-cache]>=1.15.0" ]
 nox = [ "nox>=2025.5.1" ]
 pylint = [ "pylint" ]
 pytest = [ "pytest" ]
 typecheck-runner = [ "typecheck-runner>=0.1.6; python_version>'3.9'" ]
+=======
+basedpyright = [ "basedpyright>=1.39.3" ]
+cog = [ "cogapp" ]
+docs-live = [
+    "sphinx-autobuild",
+    { include-group = "docs" },
+]
+docs-spelling = [
+    "pyenchant",
+    "sphinxcontrib-spelling",
+    { include-group = "docs" },
+]
+ipython = [ "ipython" ]
+mypy = [ "mypy[faster-cache]>=1.20.2" ]
+nox = [ "nox>=2026.4.10" ]
+pylint = [ "pylint" ]
+pytest = [ "pytest" ]
+pytest-accept = [ "pytest-accept" ]
+test-extras = [
+    { include-group = "test" },
+]
+typecheck-runner = [ "typecheck-runner>=0.2.0; python_version>'3.9'" ]
+>>>>>>> after updating
 
 # * uv -------------------------------------------------------------------------
 [tool.uv]
-required-version = ">=0.7.15"
+required-version = ">=0.11.8"
 default-groups = [ "dev" ]
 fork-strategy = "requires-python"
 managed = true
@@ -271,16 +299,16 @@ pytest-accept = { pip = true }
 [tool.pyproject2conda.envs.uvx-tools]
 reqs = [
     # these used solely for specking tools to be run via uvx ...
-    "conda-lock>=2.5.5",
-    "copier",
-    "copier-template-extensions>=0.3.1",
-    "grayskull>=2.5.3",
-    "prek",
-    "pyrefly>=0.37.0",
-    "pyright>=1.1.396",
+    "conda-lock>=4.0.0",
+    "copier-template-extensions>=0.3.3",
+    "copier>=9.15.0",
+    "grayskull>=3.1.1",
+    "prek>=0.3.11",
+    "pyrefly>=0.63.1",
+    "pyright>=1.1.409",
     "rooster>=0.1.1",
-    "twine>=5.0.0",
-    "ty>=0.0.14",
+    "twine>=6.2.0",
+    "ty>=0.0.34",
 ]
 groups = [
     "basedpyright",
