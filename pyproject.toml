@@ -64,7 +64,7 @@ type = [
 ]
 # other groups
 basedpyright = [ "basedpyright>=1.39.3" ]
-mypy = [ "mypy[faster-cache]>=1.20.2" ]
+mypy = [ "mypy[faster-cache]>=2.1.0" ]
 nox = [ "nox>=2026.4.10" ]
 pylint = [ "pylint" ]
 pytest = [ "pytest" ]
