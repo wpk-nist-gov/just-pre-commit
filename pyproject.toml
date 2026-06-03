@@ -63,22 +63,7 @@ type = [
     { include-group = "typecheck-runner" },
 ]
 # other groups
-<<<<<<< before updating
-basedpyright = [ "basedpyright>=1.39.4" ]
-=======
 basedpyright = [ "basedpyright>=1.39.6" ]
-cog = [ "cogapp" ]
-docs-live = [
-    "sphinx-autobuild",
-    { include-group = "docs" },
-]
-docs-spelling = [
-    "pyenchant",
-    "sphinxcontrib-spelling",
-    { include-group = "docs" },
-]
-ipython = [ "ipython" ]
->>>>>>> after updating
 mypy = [ "mypy[faster-cache]>=2.1.0" ]
 nox = [ "nox>=2026.4.10" ]
 pylint = [ "pylint" ]
