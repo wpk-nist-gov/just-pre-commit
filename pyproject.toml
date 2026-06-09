@@ -1,12 +1,12 @@
 [build-system]
 build-backend = "uv_build"
 requires = [
-    "uv-build>=0.11.17,<0.12.0",
+    "uv-build>=0.11.18,<0.12.0",
 ]
 
 [project]
 name = "just-pre-commit"
-version = "0.0.0"
+version = "1.51.0"
 description = "Just pre-commit hooks"
 readme = "README.md"
 keywords = [
@@ -63,7 +63,7 @@ type = [
     { include-group = "typecheck-runner" },
 ]
 # other groups
-basedpyright = [ "basedpyright>=1.39.7" ]
+basedpyright = [ "basedpyright>=1.39.6" ]
 mypy = [ "mypy[faster-cache]>=2.1.0" ]
 nox = [ "nox>=2026.4.10" ]
 pylint = [ "pylint" ]
@@ -75,6 +75,7 @@ typecheck-runner = [ "typecheck-runner>=0.2.0; python_version>'3.9'" ]
 required-version = ">=0.11.8"
 default-groups = [ "dev" ]
 fork-strategy = "requires-python"
+exclude-newer = "7 days"
 managed = true
 build-backend.source-include = [ "tests/**" ]
 pip.annotation-style = "line"
@@ -82,6 +83,9 @@ pip.generate-hashes = true
 
 [tool.uv.dependency-groups]
 dev.requires-python = ">=3.14"
+
+[tool.uv.exclude-newer-package]
+rust-just = "0 days"
 
 # * Checks ---------------------------------------------------------------------
 [tool.repo-review]
@@ -273,12 +277,12 @@ pip-deps = [
     "copier-template-extensions>=0.3.3",
     "copier>=9.15.1",
     "grayskull>=3.1.1",
-    "prek>=0.4.4",
+    "prek>=0.4.3",
     "pyrefly>=1.0.0",
     "pyright>=1.1.410",
     "rooster>=0.1.1",
     "twine>=6.2.0",
-    "ty>=0.0.44",
+    "ty>=0.0.42",
 ]
 groups = [
     "basedpyright",
