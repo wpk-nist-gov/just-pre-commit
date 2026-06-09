@@ -34,11 +34,8 @@ USE_PYTHON_MIN_VERSION = [
 USE_NO_DEPS = ["uvx-tools.txt", "pre-commit-additional-dependencies.txt"]
 
 LOCK_SCRIPTS = [
-<<<<<<< before updating
-    "tools/mirror.py",
-=======
     "tools/sync_pyproject_min_versions.py",
->>>>>>> after updating
+    "tools/mirror.py",
 ]
 
 
