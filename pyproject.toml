@@ -287,7 +287,6 @@ pip-deps = [
 groups = [
     "basedpyright",
     "mypy",
-    "nox",
     "typecheck-runner",
 ]
 skip-package = true
@@ -295,6 +294,7 @@ style = "requirements"
 
 [tool.uv-locker]
 scripts = [
+    "noxfile.py",
     "tools/mirror.py",
     "tools/sync_pyproject_min_versions.py",
 ]
