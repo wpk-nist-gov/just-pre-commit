@@ -64,19 +64,6 @@ type = [
 ]
 # other groups
 basedpyright = [ "basedpyright>=1.39.7" ]
-<<<<<<< before updating
-=======
-docs-live = [
-    "sphinx-autobuild",
-    { include-group = "docs" },
-]
-docs-spelling = [
-    "pyenchant",
-    "sphinxcontrib-spelling",
-    { include-group = "docs" },
-]
-ipython = [ "ipython" ]
->>>>>>> after updating
 mypy = [ "mypy[faster-cache]>=2.1.0" ]
 nox = [ "nox>=2026.4.10" ]
 pylint = [ "pylint" ]
@@ -308,12 +295,7 @@ style = "requirements"
 [tool.uv-locker]
 scripts = [
     "noxfile.py",
-<<<<<<< before updating
     "tools/mirror.py",
-=======
-    "tools/check_dist_version.py",
-    "tools/cog_runner.py",
->>>>>>> after updating
     "tools/sync_pyproject_min_versions.py",
 ]
 
