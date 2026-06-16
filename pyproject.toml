@@ -294,12 +294,8 @@ style = "requirements"
 
 [tool.uv-locker]
 scripts = [
-<<<<<<< before updating
-    "tools/mirror.py",
-=======
     "noxfile.py",
-    "tools/check_dist_version.py",
->>>>>>> after updating
+    "tools/mirror.py",
     "tools/sync_pyproject_min_versions.py",
 ]
 
