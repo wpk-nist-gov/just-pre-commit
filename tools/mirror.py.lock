@@ -11,8 +11,8 @@ rust-just = { timestamp = "0001-01-01T00:00:00Z", span = "PT0S" }
 
 [manifest]
 requirements = [
-    { name = "packaging", specifier = ">=23.1" },
-    { name = "urllib3", specifier = ">=2.0.5" },
+    { name = "packaging", specifier = ">=26.2" },
+    { name = "urllib3", specifier = ">=2.7.0" },
 ]
 
 [[package]]

@@ -1,8 +1,8 @@
 # /// script
 # requires-python = ">=3.12"
 # dependencies = [
-#   "packaging>=23.1",
-#   "urllib3>=2.0.5",
+#   "packaging>=26.2",
+#   "urllib3>=2.7.0",
 # ]
 # ///
 """Update just-pre-commit to the latest version of just."""
