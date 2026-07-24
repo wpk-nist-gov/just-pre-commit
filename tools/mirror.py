@@ -145,7 +145,7 @@ def maybe_check_call(args: Sequence[str], dry_run: bool = False, **kwargs: Any) 
 
 def get_all_versions() -> list[Version]:
     response = urllib3.request("GET", f"https://pypi.org/pypi/{PACKAGE}/json")
-    if response.status != 200:  # noqa: PLR2004
+    if response.status != 200:  # ruff:ignore[magic-value-comparison]
         msg = "Failed to fetch versions from pypi"
         raise RuntimeError(msg)
 
