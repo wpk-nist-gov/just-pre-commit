@@ -361,7 +361,7 @@ requires-dist = [{ name = "rust-just", specifier = "==1.57.0" }]
 basedpyright = [{ name = "basedpyright", specifier = ">=1.39.9" }]
 dev = [
     { name = "mypy", extras = ["faster-cache"], marker = "python_full_version >= '3.14'", specifier = ">=2.3.0" },
-    { name = "nox", marker = "python_full_version >= '3.14'", specifier = ">=2026.4.10" },
+    { name = "nox", marker = "python_full_version >= '3.14'", specifier = ">=2026.7.11" },
     { name = "packaging", marker = "python_full_version >= '3.14'" },
     { name = "pylint", marker = "python_full_version >= '3.14'" },
     { name = "pytest", marker = "python_full_version >= '3.14'" },
@@ -371,7 +371,7 @@ dev = [
     { name = "urllib3", marker = "python_full_version >= '3.14'" },
 ]
 mypy = [{ name = "mypy", extras = ["faster-cache"], specifier = ">=2.3.0" }]
-nox = [{ name = "nox", specifier = ">=2026.4.10" }]
+nox = [{ name = "nox", specifier = ">=2026.7.11" }]
 pylint = [{ name = "pylint" }]
 pytest = [{ name = "pytest" }]
 test = [
@@ -380,7 +380,7 @@ test = [
     { name = "pytest-sugar" },
 ]
 type = [
-    { name = "nox", specifier = ">=2026.4.10" },
+    { name = "nox", specifier = ">=2026.7.11" },
     { name = "packaging" },
     { name = "pylint" },
     { name = "pytest" },
