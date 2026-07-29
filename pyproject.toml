@@ -65,7 +65,7 @@ type = [
 # other groups
 basedpyright = [ "basedpyright>=1.39.9" ]
 mypy = [ "mypy[faster-cache]>=2.3.0" ]
-nox = [ "nox>=2026.4.10" ]
+nox = [ "nox>=2026.7.11" ]
 pylint = [ "pylint" ]
 pytest = [ "pytest" ]
 typecheck-runner = [ "typecheck-runner>=0.2.0; python_version>'3.9'" ]
@@ -301,7 +301,6 @@ style = "requirements"
 scripts = [
     "noxfile.py",
     "tools/mirror.py",
-    "tools/sync_pyproject_min_versions.py",
 ]
 
 [[tool.uv-locker.requirements]]
