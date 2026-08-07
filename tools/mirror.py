@@ -7,6 +7,7 @@
 # ///
 """Update just-pre-commit to the latest version of just."""
 
+# ruff:file-ignore[undocumented-public-function]
 import logging
 import re
 import shlex
