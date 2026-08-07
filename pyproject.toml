@@ -77,6 +77,7 @@ default-groups = [ "dev" ]
 fork-strategy = "requires-python"
 exclude-newer = "7 days"
 managed = true
+build-backend.source-exclude = [ ".*cache" ]
 build-backend.source-include = [ "tests/**" ]
 pip.annotation-style = "line"
 pip.generate-hashes = true
@@ -136,6 +137,9 @@ ignore = [
     "S603",    # - subprocess-without-shell-equals-true
     "S607",    # - start-process-with-partial-path
     "TID252",  # - Allow relative imports
+    # numpy/pandas
+    "NPY",     # - not using numpy?
+    "PD",      # - not using pandas?
 ]
 isort.known-first-party = [
     "just_pre_commit",
@@ -147,8 +151,8 @@ pylint.max-public-methods = 30
 ruff.strictly-empty-init-modules = false
 
 # Project specific ignores
-# Note use tests/.ruff.toml or examples/.ruff.toml for specific ignores
 [tool.ruff.lint.per-file-ignores]
+<<<<<<< before updating
 "src/**/*.py" = [
     # "ANN",     # - Annotations (just use mypy/pyright)
     # "D102",    # - Missing docstring in public method
@@ -167,6 +171,11 @@ ruff.strictly-empty-init-modules = false
     # "PLR2004", # - numbers in comparison sometimes ok
     # "PLR0913", # - complexity sometimes ok
     # "PLR0917", # - complexity sometimes ok
+=======
+"tests/**/*.py" = [
+    "D",    # - Don't need to document tests
+    "S101", # - Assert is fine with tests
+>>>>>>> after updating
 ]
 
 # * Checks ---------------------------------------------------------------------
