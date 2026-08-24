@@ -1,11 +1,7 @@
 [build-system]
 build-backend = "uv_build"
 requires = [
-<<<<<<< before updating
-    "uv-build>=0.12.4,<0.13.0",
-=======
     "uv-build>=0.12.5,<0.13.0",
->>>>>>> after updating
 ]
 
 [project]
@@ -39,18 +35,12 @@ dependencies = [
     "rust-just==1.58.0",
 ]
 
-<<<<<<< before updating
-[project.scripts]
-apply-command = "just_pre_commit.apply_command:main"
-
-=======
->>>>>>> after updating
 [project.urls]
 Documentation = "https://pages.nist.gov/just-pre-commit/"
 Homepage = "https://github.com/wpk-nist-gov/just-pre-commit"
 
 [project.scripts]
-just_pre_commit = "just_pre_commit.cli:main"
+apply-command = "just_pre_commit.apply_command:main"
 
 [dependency-groups]
 dev = [
@@ -74,21 +64,7 @@ type = [
 ]
 # other groups
 basedpyright = [ "basedpyright>=1.39.10" ]
-<<<<<<< before updating
-mypy = [ "mypy[faster-cache]>=2.3.0" ]
-=======
-docs-live = [
-    "sphinx-autobuild",
-    { include-group = "docs" },
-]
-docs-spelling = [
-    "pyenchant",
-    "sphinxcontrib-spelling",
-    { include-group = "docs" },
-]
-ipython = [ "ipython" ]
 mypy = [ "mypy[faster-cache]>=2.3.1" ]
->>>>>>> after updating
 nox = [ "nox>=2026.8.10" ]
 pylint = [ "pylint" ]
 pytest = [ "pytest" ]
@@ -385,11 +361,7 @@ pip-deps = [
     "pyright>=1.1.411",
     "rooster>=0.1.1",
     "twine>=7.0.0",
-<<<<<<< before updating
-    "ty>=0.0.71",
-=======
     "ty>=0.0.72",
->>>>>>> after updating
 ]
 groups = [
     "basedpyright",
