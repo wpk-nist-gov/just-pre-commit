@@ -15,6 +15,7 @@ exclude-newer-span = "P7D"
 
 [options.exclude-newer-package]
 rust-just = { timestamp = "0001-01-01T00:00:00Z", span = "PT0S" }
+prek = { timestamp = "0001-01-01T00:00:00Z", span = "PT0S" }
 
 [[package]]
 name = "argcomplete"

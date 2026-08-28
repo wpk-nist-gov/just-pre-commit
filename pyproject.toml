@@ -1,7 +1,7 @@
 [build-system]
 build-backend = "uv_build"
 requires = [
-    "uv-build>=0.12.7,<0.13.0",
+    "uv-build>=0.12.5,<0.13.0",
 ]
 
 [project]
@@ -87,6 +87,8 @@ dev.requires-python = ">=3.14"
 
 [tool.uv.exclude-newer-package]
 rust-just = "0 days"
+# Needed until prek>=0.5.0 is 7 days old
+prek = "0 days"
 
 # ruff -------------------------------------------------------------------------
 [tool.ruff]
