@@ -405,13 +405,7 @@ style = "requirements"
 [tool.uv-locker]
 scripts = [
     "noxfile.py",
-<<<<<<< before updating
-    "tools/get_version_from_pre_commit_config.py",
     "tools/mirror.py",
-=======
-    "tools/check_dist_version.py",
-    "tools/cog_runner.py",
->>>>>>> after updating
 ]
 
 [[tool.uv-locker.requirements]]
