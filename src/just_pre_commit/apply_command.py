@@ -17,7 +17,7 @@ logger = logging.getLogger("apply-command")
 
 
 def _apply_command(command: str, extras: Sequence[str], path: str) -> int:
-    cmd = (command, *extras, str(path))
+    cmd = (command, *extras, path)
     logger.info("%s", shlex.join(cmd))
     code = subprocess.call(cmd)
     logger.info("return code: %s", code)
