@@ -35,6 +35,8 @@ runs:
       with:
         python-version: ${{ inputs.python-version }}
         python-version-file: ${{ inputs.python-version-file }}
+        allow-prereleases: true
+        check-latest: true
     - name: Setup cached uv
       id: setup-cached-uv
       uses: hynek/setup-cached-uv@34e35d30f1ebc7421a5cc733bca38dcc62603960 # v2.6.0
