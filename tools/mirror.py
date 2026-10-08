@@ -19,9 +19,9 @@ from pathlib import Path
 from typing import Any
 
 import tomllib
-import urllib3
-from packaging.requirements import Requirement
-from packaging.version import Version
+import urllib3  # deptry: ignore[DEP004]
+from packaging.requirements import Requirement  # deptry: ignore[DEP004]
+from packaging.version import Version  # deptry: ignore[DEP004]
 
 PACKAGE = "rust-just"
 

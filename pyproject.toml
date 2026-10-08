@@ -179,6 +179,7 @@ toplevel = [ "just_pre_commit" ]
 known_first_party = [ "just_pre_commit" ]
 # Group: ignores
 per_rule_ignores.DEP001 = [ "pkginfo" ]
+per_rule_ignores.DEP002 = [ "rust-just" ]
 per_rule_ignores.DEP004 = [ "nox", "pytest" ]
 
 [tool.pyproject-fmt]
