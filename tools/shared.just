@@ -1,4 +1,4 @@
-# * Variables ------------------------------------------------------------------
+# * Variables --------------------------------------------------------------------------
 
 PACKAGE_NAME := "just-pre-commit"
 IMPORT_NAME := "just_pre_commit"
@@ -12,7 +12,7 @@ UVRUN_OPTS := ""
 UVRUN := trim("uv run " + UVRUN_OPTS)
 TYPECHECK := "-m typecheck_runner -v"
 
-# * Functions ------------------------------------------------------------------
+# * Functions --------------------------------------------------------------------------
 
 # run nox
 [group("tools")]
