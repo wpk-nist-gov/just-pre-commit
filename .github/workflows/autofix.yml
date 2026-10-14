@@ -55,7 +55,8 @@ jobs:
         id: prek
         continue-on-error: true
         run: >-
-          prek run --show-diff-on-failure --color=always --all-files --hook-stage=manual -v
+          prek run --show-diff-on-failure --color=always --all-files
+          --hook-stage=manual -v
 
       - name: Verify fixes
         if: steps.prek.outcome == 'failure'
