@@ -65,19 +65,6 @@ type = [
 ]
 # other groups
 basedpyright = [ "basedpyright>=1.40.2" ]
-<<<<<<< before updating
-=======
-docs-live = [
-    "sphinx-autobuild",
-    { include-group = "docs" },
-]
-docs-spelling = [
-    "pyenchant",
-    "sphinxcontrib-spelling",
-    { include-group = "docs" },
-]
-ipython = [ "ipython" ]
->>>>>>> after updating
 mypy = [ "mypy[faster-cache]>=2.4.0" ]
 nox = [ "nox>=2026.8.17" ]
 pylint = [ "pylint" ]
@@ -416,7 +403,7 @@ pip-deps = [
     "rooster>=0.1.1",
     "rust-just>=1.58.0",
     "twine>=7.0.0",
-    "ty>=0.0.85",
+    "ty>=0.0.84",
 ]
 groups = [
     "basedpyright",

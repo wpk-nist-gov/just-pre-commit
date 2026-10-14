@@ -196,13 +196,6 @@ jobs:
         python-version: ${{ fromJson(needs.build-package.outputs.minmax-default-python-versions) }}
         session:
           - test
-<<<<<<< before updating
-=======
-        include:
-          - os: windows-latest
-            python-version: ${{ needs.build-package.outputs.default-python-version }}
-            session: test
->>>>>>> after updating
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
