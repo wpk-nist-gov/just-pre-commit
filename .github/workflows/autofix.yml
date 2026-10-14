@@ -55,13 +55,13 @@ jobs:
         id: prek
         continue-on-error: true
         run: >-
-          prek run --show-diff-on-failure --color=always --all-files
-          --hook-stage=manual -v
+          prek run --show-diff-on-failure --color=always --all-files --hook-stage=manual -v
 
       - name: Verify fixes
         if: steps.prek.outcome == 'failure'
         run: >-
           prek run --show-diff-on-failure --color=always --all-files --hook-stage=manual -v
+
       - name: Commit fixes
         if: always() && !cancelled()
         uses: autofix-ci/action@c5b2d67aa2274e7b5a18224e8171550871fc7e4a # v1.3.4
