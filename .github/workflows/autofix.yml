@@ -71,14 +71,23 @@ jobs:
 
       - name: Run prek
         id: prek
-        continue-on-error: true
-        run: >-
-          prek run --show-diff-on-failure --color=always --all-files --hook-stage=manual -v
-
-      - name: Verify fixes
-        if: steps.prek.outcome == 'failure'
-        run: >-
-          prek run --show-diff-on-failure --color=always --all-files --hook-stage=manual -v
+        shell: bash
+        run: |
+          # Fixers exit non-zero when they change files. Some fixers' output feeds
+          # another fixer, so a single pass may not reach a stable tree.
+          # Re-run on the fixed tree until prek exits clean or we hit the cap.
+          set -x
+          for attempt in 1 2 3; do
+            echo "::notice title=Prek run attempt:: attempt=$attempt"
+            echo "--------------------------------------------------"
+            status=0
+            prek run --show-diff-on-failure --color=always --all-files --hook-stage=manual -v || status=$?
+            if [ "$status" -eq 0 ]; then
+              break
+            fi
+          done
+          echo "::notice title=Prek exit status::  status=$status"
+          exit "$status"
 
       - name: Commit fixes
         if: always() && !cancelled()
