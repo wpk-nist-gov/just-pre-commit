@@ -78,6 +78,7 @@ jobs:
           # Re-run on the fixed tree until prek exits clean or we hit the cap.
           set -xeo
           for attempt in 1 2 3; do
+            echo "attempt: $attempt"
             status=0
             prek run --show-diff-on-failure --color=always --all-files --hook-stage=manual -v || status=$?
             if [ "$status" -eq 0 ]; then
