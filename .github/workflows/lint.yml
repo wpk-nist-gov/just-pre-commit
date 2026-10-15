@@ -26,7 +26,7 @@ jobs:
   pre_job:
     uses: $/.github/workflows/skip_duplicate_actions.yml
 
-  autofix:
+  lint:
     name: Lint
     needs: pre_job
     if: needs.pre_job.outputs.should_skip != 'true'
