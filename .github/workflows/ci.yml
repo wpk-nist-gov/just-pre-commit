@@ -25,19 +25,7 @@ permissions: {}
 
 jobs:
   pre_job:
-    # continue-on-error: true # Uncomment once integration is finished
-    runs-on: ubuntu-latest
-    outputs:
-      should_skip: ${{ steps.skip_check.outputs.should_skip }}
-    steps:
-      - name: Don't run CI on draft PR
-        if: github.event_name == 'pull_request' && github.event.pull_request.draft == true
-        run: exit 1
-
-      - id: skip_check
-        uses: fkirc/skip-duplicate-actions@b974a9395958c231af965b70070979a577efa578 # v5.3.2
-        with:
-          paths_ignore: '[".cruft.json", ".copier.yml"]'
+    uses: $/.github/workflows/skip_duplicate_actions.yml
 
   build-package:
     name: Build & verify package
