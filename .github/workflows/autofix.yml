@@ -66,15 +66,21 @@ jobs:
           # Re-run on the fixed tree until prek exits clean or we hit the cap.
           set -x
           for attempt in 1 2 3; do
-            echo "::notice title=Prek run attempt:: attempt=$attempt"
+            echo "::notice title=Prek run attempt::attempt=$attempt"
             echo "--------------------------------------------------"
             status=0
             prek run --show-diff-on-failure --color=always --all-files --hook-stage=manual -v || status=$?
             if [ "$status" -eq 0 ]; then
               break
+            # check for unstaged or untracked changes
+            elif ! git status --porcelain | grep -E '^.[MD] |^\?\? ' >/dev/null; then
+              echo "::notice::Non zero status, but clean state."
+              break
             fi
+            # otherwise, stage changes before next run
+            git add .
           done
-          echo "::notice title=Prek exit status::  status=$status"
+          echo "::notice title=Prek exit status::status=$status"
           exit "$status"
 
       - name: Commit fixes
