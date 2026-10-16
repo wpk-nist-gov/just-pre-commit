@@ -246,15 +246,11 @@ jobs:
       - typecheck
       - test
       - coverage
-<<<<<<< before updating
-=======
-      - docs
       - zizmor
->>>>>>> after updating
     runs-on: ubuntu-latest
     steps:
       - name: Decide whether the needed jobs succeeded or failed
         uses: re-actors/alls-green@b5b5b37504aa4183270bd3d855c52a67f212be35 # v1.3.0
         with:
-          allowed-skips: "pinact,typecheck,test,coverage,docs,zizmor"
+          allowed-skips: "pinact,typecheck,test,coverage,zizmor"
           jobs: ${{ toJSON(needs) }}
