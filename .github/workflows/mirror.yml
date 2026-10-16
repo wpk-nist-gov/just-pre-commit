@@ -8,6 +8,8 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions: {}
+
 env:
   FORCE_COLOR: "3"
 
@@ -16,8 +18,8 @@ jobs:
     name: main
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
+      contents: write # for action
+      pull-requests: write # for action
     environment:
       name: pull-request
     steps:
