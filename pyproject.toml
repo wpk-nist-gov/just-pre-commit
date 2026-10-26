@@ -69,6 +69,13 @@ mypy = [ "mypy[faster-cache]>=2.4.0" ]
 nox = [ "nox>=2026.8.17" ]
 pylint = [ "pylint" ]
 pytest = [ "pytest" ]
+<<<<<<< before updating
+=======
+pytest-accept = [ "pytest-accept" ]
+test-extras = [
+    { include-group = "test" },
+]
+>>>>>>> after updating
 typecheck-runner = [ "typecheck-runner>=0.2.2; python_version>'3.9'" ]
 
 # * uv ---------------------------------------------------------------------------------------------
