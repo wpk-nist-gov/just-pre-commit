@@ -12,13 +12,13 @@ import logging
 import re
 import shlex
 import subprocess
+import tomllib
 from argparse import ArgumentParser
 from collections.abc import Iterable, Sequence
 from functools import partial
 from pathlib import Path
 from typing import Any
 
-import tomllib
 import urllib3  # deptry: ignore[DEP004]
 from packaging.requirements import Requirement  # deptry: ignore[DEP004]
 from packaging.version import Version  # deptry: ignore[DEP004]
